@@ -11,13 +11,14 @@ WORKDIR Radiance
 
 # simplify the makeall command to be more unattended (we know exactly what we want here...)
 # srcdirs=( common rt meta cv gen ot px hd util cal )
-RUN pushd src/common && /usr/local/bin/rmake -k install && popd
-RUN pushd src/rt && /usr/local/bin/rmake -k install && popd
-RUN pushd src/meta && /usr/local/bin/rmake -k install && popd
-RUN pushd src/cv && /usr/local/bin/rmake -k install && popd
-RUN pushd src/gen && /usr/local/bin/rmake -k install && popd
-RUN pushd src/ot && /usr/local/bin/rmake -k install && popd
-RUN pushd src/px && /usr/local/bin/rmake -k install && popd
-RUN pushd src/hd && /usr/local/bin/rmake -k install && popd
-RUN pushd src/util && /usr/local/bin/rmake -k install && popd
-RUN pushd src/cal && /usr/local/bin/rmake -k install && popd
+RUN mkdir src/lib
+RUN cd src/common && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/rt && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/meta && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/cv && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/gen && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/ot && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/px && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/hd && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/util && /usr/local/bin/rmake -k install; exit 0
+RUN cd src/cal && /usr/local/bin/rmake -k install; exit 0
