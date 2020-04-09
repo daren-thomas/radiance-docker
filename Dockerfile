@@ -7,7 +7,7 @@ RUN apt-get update -y && apt-get -y install gcc git libgl1-mesa-glx csh build-es
 
 # download the source for Radiance and compile it using the answers file
 RUN git clone https://github.com/NREL/Radiance.git
-WORKDIR Radiance
+WORKDIR /Radiance
 
 # simplify the makeall command to be more unattended (we know exactly what we want here...)
 # srcdirs=( common rt meta cv gen ot px hd util cal )
@@ -22,3 +22,5 @@ RUN cd src/px && /usr/local/bin/rmake -k install; exit 0
 RUN cd src/hd && /usr/local/bin/rmake -k install; exit 0
 RUN cd src/util && /usr/local/bin/rmake -k install; exit 0
 RUN cd src/cal && /usr/local/bin/rmake -k install; exit 0
+
+ENV PATH "/usr/local/bin:$PATH"

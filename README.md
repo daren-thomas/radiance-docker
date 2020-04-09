@@ -8,7 +8,7 @@ It turns out, building Radiance on Windows is not really straightforward. Unless
 
 The commands I'm interested in providing are these two in particular:
 
-- `pabopto2bdsf`
+- `pabopto2bsdf`
 
 - `bsdf2klems`
 
