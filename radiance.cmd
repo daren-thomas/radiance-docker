@@ -1,0 +1,1 @@
+docker run -it --rm -v %cd%:/wd --workdir /wd darenthomas/radiance bash
