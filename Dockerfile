@@ -25,8 +25,6 @@ RUN cd src/px && /usr/local/bin/rmake -k install; exit 0
 RUN cd src/hd && /usr/local/bin/rmake -k install; exit 0
 RUN cd src/util && /usr/local/bin/rmake -k install; exit 0
 RUN cd src/cal && /usr/local/bin/rmake -k install; exit 0
-RUN cp src/util/wrapBSDF /usr/local/bin$
 
 
-
-ENV PATH "/usr/local/bin:$PATH"
+ENV PATH "/usr/local/bin:/Radiance/src/util:$PATH"
